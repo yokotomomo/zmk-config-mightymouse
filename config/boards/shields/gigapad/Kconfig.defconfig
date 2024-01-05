@@ -1,0 +1,6 @@
+if SHIELD_GIGAPAD
+
+config ZMK_KEYBOARD_NAME
+    default "gigapad"
+
+endif
