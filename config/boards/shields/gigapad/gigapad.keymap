@@ -9,16 +9,14 @@
 
         default_layer {
             bindings = <
-                &kp C_PREV  &kp C_PP    &kp C_NEXT
-                &kp C_MUTE
+                &kp A  &kp B  &kp C  &kp D
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         bt_layer {
             bindings = <
-                &bt BT_PRV  &bt BT_CLR  &bt BT_NXT
-                &bootloader    
+                &bt BT_PRV  &bt BT_CLR  &bt BT_NXT  &bootloader    
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
