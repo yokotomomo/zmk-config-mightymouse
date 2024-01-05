@@ -3,27 +3,22 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define DEFAULT 0
-#define LOWER   1
-
 / {
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            label= "DEFAULT";
             bindings = <
-                          &kp C_PREV       &kp C_PP         &kp C_NEXT
-                                           &kp C_MUTE
+                &kp C_PREV  &kp C_PP    &kp C_NEXT
+                &kp C_MUTE
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        lower_layer {
-            label = "LOWER";
+        bt_layer {
             bindings = <
-                          &bt BT_PRV      &bt BT_CLR        &bt BT_NXT
-                                          &bootloader    
+                &bt BT_PRV  &bt BT_CLR  &bt BT_NXT
+                &bootloader    
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
