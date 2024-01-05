@@ -19,7 +19,7 @@
         };
         finder_home: finder_home {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
             bindings = 
@@ -31,7 +31,7 @@
         };
         finder_desktop: finder_desktop {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
             bindings = 
@@ -43,7 +43,7 @@
         };
         finder_downloads: finder_downloads {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <3>;
+            #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
             bindings = 
