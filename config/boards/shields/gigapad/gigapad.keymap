@@ -4,19 +4,29 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
+    macros {
+        zed_em_kay: zed_em_kay {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_press &kp LSHFT>,
+                <&macro_tap &kp Z &kp M &kp K>,
+                <&macro_release &kp LSHFT>;
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &kp A  &kp B  &kp C  &kp D
+                &zed_em_kay  &kp B  &kp C  &kp D
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         bt_layer {
             bindings = <
-                &bt BT_PRV  &bt BT_CLR  &bt BT_NXT  &bootloader    
+                &bootloader &bt BT_PRV  &bt BT_CLR  &bt BT_NXT    
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
