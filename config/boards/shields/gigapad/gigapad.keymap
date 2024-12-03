@@ -48,7 +48,6 @@ d#include <behaviors.dtsi>
 
         default_layer {
             bindings = <
-                &bt BT_CLR
                 &kp A
                 &kp B
                 &kp C
