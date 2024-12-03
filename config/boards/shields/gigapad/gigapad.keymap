@@ -1,4 +1,4 @@
-#include <behaviors.dtsi>
+d#include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
@@ -48,13 +48,13 @@
 
         default_layer {
             bindings = <
-                &bt BT_CLR 
                 &kp A
                 &kp B
                 &kp C
                 &kp D
                 &kp E
                 &kp F
+                &bt G 
             >;
 
             sensor-bindings =  <&inc_dec_kp UP DOWN>;
