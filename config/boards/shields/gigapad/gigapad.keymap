@@ -54,7 +54,7 @@ d#include <behaviors.dtsi>
                 &kp D
                 &kp E
                 &kp F
-                &bt G 
+                &kp G 
             >;
 
             sensor-bindings =  <&inc_dec_kp UP DOWN>;
