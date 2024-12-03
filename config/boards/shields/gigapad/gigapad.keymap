@@ -15,7 +15,7 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings = 
-                <&macro_tap &kp H>;
+                <&macro_tap &mkp LCLK>;
         };
         finder_desktop: finder_desktop {
             compatible = "zmk,behavior-macro";
@@ -58,7 +58,7 @@
             bindings = <
                 &bt BT_CLR  &finder_downloads  &finder_desktop  &finder_home
             >;
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings =  <&inc_dec_kp UP DOWN>;
         };
     };
 };
