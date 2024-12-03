@@ -15,7 +15,7 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings = 
-                <&macro_tap &mkp LCLK>;
+               <&macro_tap &kp D>;
         };
         finder_desktop: finder_desktop {
             compatible = "zmk,behavior-macro";
