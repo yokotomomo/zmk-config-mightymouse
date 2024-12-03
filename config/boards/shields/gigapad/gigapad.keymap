@@ -66,8 +66,8 @@
                 &kp A
                 &kp B
                 &kp C
-                &msc SCRL_UP
-                &mkp LCLK
+                &msc SCRL_LEFT
+                &kp E
             >;
 
             sensor-bindings =  <&scroll_up_down>;
