@@ -53,7 +53,7 @@
                 &kp B
                 &kp C
                 &kp D
-                &msc SCRL_UP
+                &mmv MOVE_UP
             >;
 
             sensor-bindings =  <&inc_dec_kp UP DOWN>;
