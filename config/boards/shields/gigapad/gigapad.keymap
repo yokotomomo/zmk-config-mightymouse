@@ -5,6 +5,8 @@
 
 #include <dt-bindings/zmk/mouse.h>
 
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 100
+
 / {
     macros {
         finder_home: finder_home {
