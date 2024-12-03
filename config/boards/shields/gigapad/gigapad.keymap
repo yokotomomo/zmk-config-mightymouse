@@ -64,11 +64,11 @@
 //|b d| 4 6|
         default_layer {
             bindings = <
-                &mkp SCRL_UP
-                &mkp SCRL_DOWN
-                &mkp SCRL_LEFT
-                &kp C
-                &mkp LCLK
+                &kp A
+                &kp B
+                &msc SCRL_DOWN
+                &kp D
+                &kp E
             >;
 
             sensor-bindings =  <&scroll_up_down>;
