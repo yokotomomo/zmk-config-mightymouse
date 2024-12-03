@@ -70,7 +70,7 @@
                 &mkp LCLK
             >;
 
-            sensor-bindings =  <&inc_dec_kp UP DOWN>;
+            sensor-bindings =  <&scroll_up_down>;
 
         };
     };
