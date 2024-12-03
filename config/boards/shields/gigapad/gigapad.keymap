@@ -48,13 +48,7 @@ d#include <behaviors.dtsi>
 
         default_layer {
             bindings = <
-                &bt BT_CLR 
-                &kp A
-                &kp B
-                &kp C
-                &kp D
-                &kp E
-                &kp F
+                &bt BT_CLR  &finder_downloads  &finder_desktop  &finder_home
             >;
 
             sensor-bindings =  <&inc_dec_kp UP DOWN>;
