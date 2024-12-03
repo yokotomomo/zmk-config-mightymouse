@@ -11,11 +11,14 @@
         finder_home: finder_home {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             bindings = 
-                <&macro_press SCRL_UP>,
-                <&macro_release SCRL_UP>;
+                <&macro_press &kp LEFT_COMMAND>,
+                <&macro_press &kp LEFT_SHIFT>,
+                <&macro_tap &kp H>,
+                <&macro_release &kp LEFT_COMMAND>,
+                <&macro_release &kp LEFT_SHIFT>;
         };
         finder_desktop: finder_desktop {
             compatible = "zmk,behavior-macro";
@@ -60,11 +63,11 @@
 
         default_layer {
             bindings = <
+                &msc SCRL_LEFT
+                &msc SCRL_RIGHT
+                &msc SCRL_UP
                 &none
-                &none
-                &finder_home
-                &none
-                &none
+                &msc SCRL_DOWN
             >;
 
             sensor-bindings =  <&scroll_up_down>;
