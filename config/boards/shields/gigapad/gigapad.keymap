@@ -64,9 +64,9 @@
 //|b d| 4 6|
         default_layer {
             bindings = <
-                &kp SCRL_UP
-                &kp SCRL_DOWN
-                &kp SCRL_LEFT
+                &msc SCRL_UP
+                &msc SCRL_DOWN
+                &msc SCRL_LEFT
                 &kp C
                 &mkp LCLK
             >;
