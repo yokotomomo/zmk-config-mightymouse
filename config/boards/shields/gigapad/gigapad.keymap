@@ -44,6 +44,16 @@
                 <&macro_release &kp LEFT_ALT>;
         };
     };
+
+// 新しいスクロール動作の追加
+        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            // 追加: スクロールのタップ時間を設定 (20ms)
+            tap-ms = <20>;
+        };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -51,7 +61,7 @@
             bindings = <
                 &bt BT_CLR  &finder_downloads  &finder_desktop  &finder_home
             >;
-            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            sensor-bindings = <&scroll_up_down>;
         };
     };
 };
