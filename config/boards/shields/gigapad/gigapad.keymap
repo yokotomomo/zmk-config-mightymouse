@@ -3,6 +3,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#include <dt-bindings/zmk/mouse.h>
+
 / {
     macros {
         finder_home: finder_home {
