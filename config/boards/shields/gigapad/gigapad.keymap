@@ -71,8 +71,6 @@
 
     keymap {
         compatible = "zmk,keymap";
-//|a c| 3 2|
-//|b d| 4 6|
         default_layer {
             bindings = <
                 &kp A
