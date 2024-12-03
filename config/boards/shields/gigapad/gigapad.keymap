@@ -48,11 +48,11 @@ d#include <behaviors.dtsi>
 
         default_layer {
             bindings = <
+                &bt BT_CLR 
                 &kp A
                 &kp B
                 &kp C
                 &kp D
-                &kp E
             >;
 
             sensor-bindings =  <&inc_dec_kp UP DOWN>;
