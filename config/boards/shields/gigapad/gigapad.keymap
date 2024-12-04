@@ -8,7 +8,7 @@
 
 / {
     macros {
-        finder_home: finder_home {
+        UPM: UPmacro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <40>;
