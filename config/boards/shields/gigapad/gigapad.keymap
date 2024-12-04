@@ -93,8 +93,8 @@
         default_layer {
             bindings = <
                 &Rs
-                &Ls
                 &Us
+                &Ls 
                 &none
                 &Ds
             >;
