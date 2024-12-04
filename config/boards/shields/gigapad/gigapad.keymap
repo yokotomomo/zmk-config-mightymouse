@@ -8,7 +8,7 @@
 
 / {
     macros {
-        UPM: UPmacro {
+        UPM: UPM {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <40>;
@@ -60,11 +60,11 @@
 
         default_layer {
             bindings = <
-                &msc SCRL_LEFT
-                &msc SCRL_RIGHT
-                &msc SCRL_UP
                 &none
-                &msc SCRL_DOWN
+                &none
+                &UPM
+                &none
+                &none
             >;
 
             sensor-bindings =  <&scroll_up_down>;
