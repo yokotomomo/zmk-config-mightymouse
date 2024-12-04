@@ -92,11 +92,11 @@
 
         default_layer {
             bindings = <
-                &Rs
-                &Us
-                &Ls 
-                &none
                 &Ds
+                &Ls
+                &Us 
+                &none
+                &Rs
             >;
 
             sensor-bindings =  <&scroll_up_down>;
