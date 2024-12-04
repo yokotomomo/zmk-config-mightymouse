@@ -92,8 +92,8 @@
 
         default_layer {
             bindings = <
-                &Ls
                 &Us
+                &Ls
                 &Rs
                 &none
                 &Ds
