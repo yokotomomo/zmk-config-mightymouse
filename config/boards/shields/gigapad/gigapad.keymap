@@ -14,7 +14,7 @@
             wait-ms = <40>;
             tap-ms = <40>;
             bindings = 
-                <&macro_press &msc SCRL_DOWN,
+                <&macro_press &msc SCRL_DOWN>,
                 <&macro_release &msc SCRL_DOWN>;
         };
         finder_desktop: finder_desktop {
