@@ -15,7 +15,6 @@
             tap-ms = <40>;
             bindings = 
                 <&macro_press &kp H>,
-                <&macro_tap &kp G>,
                 <&macro_release &kp H>;
         };
         finder_desktop: finder_desktop {
