@@ -66,19 +66,35 @@
 
         default_layer {
             bindings = <
-//トラックボール
+                //トラックボール
                 &Ds
                 &Ls
                 &Us 
                 &none
                 &Rs
-//クリック
+                //クリック
                 &mkp LCLK
-                &mkp RCLK
+                &mo 1
             >;
-
+            //ロータリーエンコーダー
             sensor-bindings =  <&scroll_up_down>;
-
         };
+
+        layer_1 {
+            bindings = <
+                //トラックボール
+                &trans
+                &trans
+                &trans
+                &trans
+                &trans
+                //クリック
+                &mkp RCLK
+                &trans
+            >;
+            //ロータリーエンコーダー
+            sensor-bindings =  <&scroll_up_down>;
+        };
+
     };
 };
