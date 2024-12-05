@@ -97,7 +97,8 @@
                 &Us 
                 &none
                 &Rs
-                &mkp LCLK
+                &kp L
+                &kp R
             >;
 
             sensor-bindings =  <&scroll_up_down>;
