@@ -17,7 +17,7 @@
             <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
             <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
             <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
-            <&xiao_d 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+            <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
             //<&xiao_d 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     };
 
