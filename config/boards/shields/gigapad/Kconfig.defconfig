@@ -1,5 +1,2 @@
 config ZMK_KEYBOARD_NAME
     default "gigapad"
-
-config SPI
-	default y
