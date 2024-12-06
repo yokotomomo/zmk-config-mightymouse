@@ -75,6 +75,9 @@
                 //クリック
                 &mkp LCLK
                 &mo 1
+                //NFC
+                &kp A
+                &kp B
             >;
             //ロータリーエンコーダー
             sensor-bindings =  <&scroll_up_down>;
@@ -90,6 +93,7 @@
                 &trans
                 //クリック
                 &mkp RCLK
+                &trans
                 &trans
             >;
             //ロータリーエンコーダー
