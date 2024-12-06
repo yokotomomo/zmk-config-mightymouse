@@ -79,8 +79,6 @@
                 &kp A
                 &kp B
             >;
-            //ロータリーエンコーダー
-            sensor-bindings =  <&scroll_up_down>;
         };
 
         layer_1 {
@@ -98,8 +96,6 @@
                 &trans
                 &trans
             >;
-            //ロータリーエンコーダー
-            sensor-bindings =  <&scroll_up_down>;
         };
 
     };
