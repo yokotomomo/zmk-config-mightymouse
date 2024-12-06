@@ -28,7 +28,7 @@
             group1 {
                 psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
                     <NRF_PSEL(SPIM_MOSI, 1, 15)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 14)>;
+                    <NRF_PSEL(SPIM_MISO, 1, 15)>;
             };
         };
     
@@ -36,7 +36,7 @@
             group1 {
                 psels = <NRF_PSEL(SPIM_SCK, 1, 13)>, //Sclk
                     <NRF_PSEL(SPIM_MOSI, 1, 15)>,
-                    <NRF_PSEL(SPIM_MISO, 1, 14)>;//SDIO
+                    <NRF_PSEL(SPIM_MISO, 1, 15)>;//SDIO
                 low-power-enable;
             };
         };
@@ -55,7 +55,7 @@
             compatible = "pixart,pmw3610";
             reg = <0>;
             spi-max-frequency = <2000000>;
-            irq-gpios = <&xiao_d 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //motion
+            irq-gpios = <&gpio1 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //motion
     
             /*   optional features   */
             // snipe-layers = <1>;
@@ -72,21 +72,6 @@
   };
 };
 //pmw3360
-
-
-    left_encoder: encoder_left {
-        compatible = "alps,ec11";
-        label = "encoder";
-        a-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        b-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <80>;
-        status = "okay";
-    };
-
-    sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder>;
-    };
 
 
 };
