@@ -1,77 +1,70 @@
 
 / {
-    chosen {
-        zmk,kscan = &default_kscan;
-    };
+        chosen {
+            zmk,kscan = &default_kscan;
+        };
 
-    default_kscan: kscan {
-        compatible = "zmk,kscan-gpio-direct";
-        label = "default_kscan";
-//|a c| 3 2|
-//|b d| 4 6|
-        input-gpios =
-         
-            <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
-            <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
-            <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
-            <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
-            <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
-            <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
-            <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
-            <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
-            <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    };
+        default_kscan: kscan {
+            compatible = "zmk,kscan-gpio-direct";
+            label = "default_kscan";
+            input-gpios =
+                <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&xiao_d 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>,
+                <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        };
 
-//pmw3360
-    &pinctrl {
-        spi0_default: spi0_default {
-            group1 {
-                psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
-                    <NRF_PSEL(SPIM_MOSI, 1, 15)>,
-                    <NRF_PSEL(SPIM_MISO, 1, 15)>;
+        &pinctrl {
+            spi0_default: spi0_default {
+                group1 {
+                    psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
+                        <NRF_PSEL(SPIM_MOSI, 1, 15)>,
+                        <NRF_PSEL(SPIM_MISO, 1, 15)>;
+                };
+            };
+        
+            spi0_sleep: spi0_sleep {
+                group1 {
+                    psels = <NRF_PSEL(SPIM_SCK, 1, 13)>, //Sclk
+                        <NRF_PSEL(SPIM_MOSI, 1, 15)>,
+                        <NRF_PSEL(SPIM_MISO, 1, 15)>;//SDIO
+                    low-power-enable;
+                };
             };
         };
     
-        spi0_sleep: spi0_sleep {
-            group1 {
-                psels = <NRF_PSEL(SPIM_SCK, 1, 13)>, //Sclk
-                    <NRF_PSEL(SPIM_MOSI, 1, 15)>,
-                    <NRF_PSEL(SPIM_MISO, 1, 15)>;//SDIO
-                low-power-enable;
-            };
-        };
-    };
-    
-    &spi0 {
-        status = "okay";
-        compatible = "nordic,nrf-spim";
-        pinctrl-0 = <&spi0_default>;
-        pinctrl-1 = <&spi0_sleep>;
-        pinctrl-names = "default", "sleep";
-        cs-gpios =  <&xiao_d 7 GPIO_ACTIVE_LOW>; //NCS
-    
-        trackball: trackball@0 {
+        &spi0 {
             status = "okay";
-            compatible = "pixart,pmw3610";
-            reg = <0>;
-            spi-max-frequency = <2000000>;
-            irq-gpios = <&gpio1 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //motion
-    
-            /*   optional features   */
-            // snipe-layers = <1>;
-            // scroll-layers = <2 3>;
-            // automouse-layer = <4>;
+            compatible = "nordic,nrf-spim";
+            pinctrl-0 = <&spi0_default>;
+            pinctrl-1 = <&spi0_sleep>;
+            pinctrl-names = "default", "sleep";
+            cs-gpios =  <&xiao_d 7 GPIO_ACTIVE_LOW>; //NCS
+        
+            trackball: trackball@0 {
+                status = "okay";
+                compatible = "pixart,pmw3610";
+                reg = <0>;
+                spi-max-frequency = <2000000>;
+                irq-gpios = <&gpio1 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //motion
+        
+                /*   optional features   */
+                // snipe-layers = <1>;
+                // scroll-layers = <2 3>;
+                // automouse-layer = <4>;
+            };
         };
-    };
 
-/ {
-  trackball_listener {
-    compatible = "zmk,input-listener";
-    device = <&trackball>;
+        / {
+            trackball_listener {
+                compatible = "zmk,input-listener";
+                device = <&trackball>;
 
-  };
-};
-//pmw3360
-
-
+            };
+        };
 };
