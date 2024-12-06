@@ -39,9 +39,9 @@
         
             spi0_sleep: spi0_sleep {
                 group1 {
-                    psels = <NRF_PSEL(SPIM_SCK, 1, 13)>, //Sclk
+                    psels = <NRF_PSEL(SPIM_SCK, 1, 13)>, /*Sclk*/
                         <NRF_PSEL(SPIM_MOSI, 1, 15)>,
-                        <NRF_PSEL(SPIM_MISO, 1, 15)>;//SDIO
+                        <NRF_PSEL(SPIM_MISO, 1, 15)>;/*SDIO*/
                     low-power-enable;
                 };
             };
@@ -53,14 +53,14 @@
             pinctrl-0 = <&spi0_default>;
             pinctrl-1 = <&spi0_sleep>;
             pinctrl-names = "default", "sleep";
-            cs-gpios =  <&xiao_d 7 GPIO_ACTIVE_LOW>; //NCS
+            cs-gpios =  <&xiao_d 7 GPIO_ACTIVE_LOW>; /*NCS */
         
             trackball: trackball@0 {
                 status = "okay";
                 compatible = "pixart,pmw3610";
                 reg = <0>;
                 spi-max-frequency = <2000000>;
-                irq-gpios = <&gpio1 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //motion
+                irq-gpios = <&gpio1 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; /*motion */
         
                 /*   optional features   */
                 // snipe-layers = <1>;
