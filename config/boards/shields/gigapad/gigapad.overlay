@@ -19,6 +19,15 @@
                 <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         };
 
+
+        / {
+            trackball_listener {
+                compatible = "zmk,input-listener";
+                device = <&trackball>;
+
+            };
+        };
+
         &pinctrl {
             spi0_default: spi0_default {
                 group1 {
@@ -60,11 +69,4 @@
             };
         };
 
-        / {
-            trackball_listener {
-                compatible = "zmk,input-listener";
-                device = <&trackball>;
-
-            };
-        };
 };
