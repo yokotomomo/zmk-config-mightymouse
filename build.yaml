@@ -19,4 +19,4 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: gigapad rgbled_adapter
+    shield: mightymouse rgbled_adapter
