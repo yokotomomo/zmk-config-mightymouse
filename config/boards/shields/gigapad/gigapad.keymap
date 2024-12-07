@@ -4,6 +4,8 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/mouse.h>
 
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 100   //スクロール量
+
 / {
     macros {
         Us: Us {
@@ -77,8 +79,7 @@
                 &kp A
                 &kp B
             >;
-            //ロータリーエンコーダー
-            sensor-bindings =  <&scroll_up_down>;
+
         };
 
         layer_1 {
@@ -96,8 +97,6 @@
                 &trans
                 &trans
             >;
-            //ロータリーエンコーダー
-            sensor-bindings =  <&scroll_up_down>;
         };
 
     };
